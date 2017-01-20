@@ -1,5 +1,5 @@
 dist: trusty
-sudo: false
+sudo: required
 
 language: c
 
@@ -24,9 +24,9 @@ env:
 matrix:
   exclude:
     - os: osx
-      env: STATIC_ANALYZER=scan-build CMAKE_OPTS='-DCMAKE_BUILD_TYPE=Debug'
+      env: STATIC_ANALYZER=scan-build
   allow_failures:
-    - env: STATIC_ANALYZER=scan-build CMAKE_OPTS="-DCMAKE_BUILD_TYPE=Debug"
+    - env: STATIC_ANALYZER=scan-build
 
 install:
   - if [ "$TRAVIS_OS_NAME" = "osx" ]; then brew update; fi
