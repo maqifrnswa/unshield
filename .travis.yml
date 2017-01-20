@@ -29,7 +29,7 @@ addons:
 matrix:
   exclude:
     - os: osx
-      env: STATIC_ANALYZER=scan-build
+      env: STATIC_ANALYZER=scan-build CMAKE_OPTS=\"-DCMAKE_BUILD_TYPE=Debug\"
   allow_failures:
     - env: STATIC_ANALYZER=scan-build
 
