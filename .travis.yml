@@ -19,7 +19,12 @@ env:
     - USE_OUR_OWN_MD5=1 BUILD_STATIC=0
     - USE_OUR_OWN_MD5=0 BUILD_STATIC=1
     - USE_OUR_OWN_MD5=1 BUILD_STATIC=1
-    - STATIC_ANALYZER=scan-build CMAKE_OPTS='-DCMAKE_BUILD_TYPE=Debug'
+    - STATIC_ANALYZER=scan-build CMAKE_OPTS="-DCMAKE_BUILD_TYPE=Debug"
+
+addons:
+  apt:
+    packages:
+      - clang
 
 matrix:
   exclude:
